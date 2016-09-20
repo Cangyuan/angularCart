@@ -1,0 +1,68 @@
+<div class="container">
+
+  <div>
+    <acme-navbar creation-date="main.creationDate"></acme-navbar>
+  </div>
+
+  <div class="jumbotron text-center">
+    <!-- <h1>Hello, test!</h1>
+    <p class="lead">
+      <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
+      Always a pleasure scaffolding your apps.
+    </p>
+    <p class="animated infinite" ng-class="main.classAnimation">
+      <button type="button" class="btn btn-lg btn-success" ng-click="main.showToastr()">Splendid Toastr</button>
+    </p>
+    <p>
+      With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
+    </p> -->
+    <table class="table" ng-show="list.length">
+      <thead>
+        <tr>
+          <th>产品编号</th>
+          <th>产品名字</th>
+          <th>购买数量</th>
+          <th>产品单价</th>
+          <th>产品总价</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="pro in list">
+          <td>{{pro.id}}</td>
+          <td>{{pro.name}}</td>
+          <td>
+            <button ng-click="add(pro.id)" class="btn btn-primary">+</button>
+            <input type="text"ng-model="pro.num" placeholder="请输入产品数量">
+            <button ng-click="less(pro.id)" class="btn btn-primary">-</button>          
+          </td>
+          <td>{{pro.price}}</td>
+          <td>{{pro.num * pro.price}}</td>
+          <td><button ng-click="removeClick(pro.id)" class="btn btn-danger">移除</button></td>
+        </tr>
+        <tr>
+         <td>购买总价</td>
+         <td>{{tobalPrice()}}</td>
+         <td>总购买数量</td>
+         <td>{{totalNum()}}</td>
+         <td colspan="2"><button ng-click="list={}" class="btn btn-danger">清空购物车</button></td>
+        </tr>       
+      </tbody>
+    </table>
+    <p ng-show="!list.length">您的购物车为空</p>
+  </div>
+
+  <!-- <div class="row">
+    <div class="col-sm-6 col-md-4" ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
+      <div class="thumbnail">
+        <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
+        <div class="caption">
+          <h3>{{ awesomeThing.title }}</h3>
+          <p>{{ awesomeThing.description }}</p>
+          <p><a ng-href="{{awesomeThing.url}}">{{ awesomeThing.url }}</a></p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+</div>
